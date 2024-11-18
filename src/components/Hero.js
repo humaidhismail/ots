@@ -5,7 +5,7 @@ import image from '../images/cockpit.jpg';
 
 export default function Hero() {
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden bg-[#D9D9D6]">
+    <section id='hero' className="relative py-20 lg:py-32 overflow-hidden bg-[#D9D9D6]">
       <div className="absolute inset-0 z-0">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#hero-gradient)" />
