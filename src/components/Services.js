@@ -82,7 +82,7 @@ export default function Services() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }} // No delay for the card itself
               transition={{
-                duration: 0.8,
+                duration: 0.5,
                 delay: index * 0.1, // Slight delay based on index for each card
                 ease: 'easeInOut',
               }}
@@ -109,6 +109,9 @@ export default function Services() {
                     }}
                   >
                     {item}
+                    {itemIndex < service.description.length - 1 && (
+                      <hr className="my-2 border-t border-[#CBA052] opacity-50" />
+                    )}
                   </motion.div>
                 ))}
               </div>
