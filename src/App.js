@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client'; // Correct import for React 18+
+import Navigations from './components/Navigations'; // Ensure the file is named Navigation.js
+import Hero from './components/Hero';
+import Vision from './components/Vision';
+import Services from './components/Services';
+import WhyUs from './components/Whyus'; // Fixed capitalization of 'WhyUs'
+import Team from './components/Team';
+import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-[#07272D] text-white">
+      <Navigations />
+      <Hero />
+      <Vision/>
+      <Services />
+      <WhyUs />
+      <Team />
+      <Contact />
     </div>
   );
 }
-
 export default App;
+// For React 18 and later
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
