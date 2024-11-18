@@ -7,16 +7,12 @@ export default function Services() {
     {
       icon: Wrench,
       title: 'Aircraft Maintenance & Engineering',
-      description: [
-        'Supply and installation of avionics and support'
-      ]
+      description: ['Supply and installation of avionics and support']
     },
     {
       icon: Plane,
       title: 'Ground Handling Services',
-      description: [
-        'Assistance on Passenger handling and VIP services'
-      ]
+      description: ['Assistance on Passenger handling and VIP services']
     },
     {
       icon: FileText,
@@ -30,7 +26,7 @@ export default function Services() {
       icon: Briefcase,
       title: 'Charter Services',
       description: [
-        'Charter Solutions',
+        'Charter solutions',
         'Customized travel packages for tourism and special events'
       ]
     },
@@ -45,16 +41,14 @@ export default function Services() {
     {
       icon: Fuel,
       title: 'Aviation Fuel Services',
-      description: [
-        'Jet fuel supply and management'
-      ]
+      description: ['Jet fuel supply and management']
     },
     {
       icon: Search,
       title: 'Aircraft Sourcing and Leasing',
       description: [
         'Comprehensive services for private and corporate aviation',
-        'Sourcing of Aircraft for purchase, leasing (wet and dry)',
+        'Sourcing of aircraft for purchase, leasing (wet and dry)',
         'Sourcing of leasing finance for aircraft'
       ]
     },
@@ -62,7 +56,8 @@ export default function Services() {
       icon: ShoppingCart,
       title: 'Support Services and Equipment',
       description: [
-        'Sourcing of Spare parts, Aviation consumables and Ancillary'
+        'Sourcing of spare parts',
+        'Aviation consumables and ancillary equipment'
       ]
     },
   ];
@@ -84,23 +79,39 @@ export default function Services() {
             <motion.div
               key={index}
               className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }} // No delay for the card itself
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1, // Slight delay based on index for each card
+                ease: 'easeInOut',
+              }}
               viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.03, 
-                boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
-                backgroundColor: "#f7f7f7" 
+              whileHover={{
+                scale: 1.03,
+                boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
+                backgroundColor: '#f7f7f7',
               }}
             >
               <service.icon className="w-12 h-12 text-[#CBA052] mb-6" />
               <h3 className="font-playfair-display-medium text-2xl text-[#07272D] mb-4">{service.title}</h3>
-              <ul className="list-disc pl-5">
+              <div className="space-y-3">
                 {service.description.map((item, itemIndex) => (
-                  <li key={itemIndex} className="font-playfair-display-regular text-[#CBA052] pl-2">{item}</li>
+                  <motion.div
+                    key={itemIndex}
+                    className="font-playfair-display-regular text-[#07272D]"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: itemIndex * 0.2, // Delay for description items to animate sequentially
+                      ease: 'easeOut',
+                    }}
+                  >
+                    {item}
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           ))}
         </div>
