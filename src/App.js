@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#07272D] text-white">
+    <div className="min-h-screen bg-[#07272D] text-white scroll-smooth">
       <Navigations />
       <Hero />
       <Vision/>

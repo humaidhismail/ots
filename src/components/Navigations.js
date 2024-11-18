@@ -20,10 +20,11 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
+    { name: 'About Us', href: '#hero' },
     { name: 'Services', href: '#services' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Why Us?', href: '#why-us' },
+    { name: 'Team', href: '#team' },
+    { name: 'Contact Us', href: '#contact' },
   ];
 
   return (
