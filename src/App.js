@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'; // Correct import for React 18+
 import Navigations from './components/Navigations'; // Ensure the file is named Navigation.js
 import Hero from './components/Hero';
+import About from './components/About';
 import Vision from './components/Vision';
 import Services from './components/Services';
 import WhyUs from './components/Whyus'; // Fixed capitalization of 'WhyUs'
@@ -13,6 +14,7 @@ function App() {
     <div className="min-h-screen bg-[#07272D] text-white scroll-smooth">
       <Navigations />
       <Hero />
+      <About />
       <Vision/>
       <Services />
       <WhyUs />
