@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Award, Sliders, Target } from 'lucide-react';
+import planeImage from '../images/plane.jpg'; // Ensure the correct path to the image
 
 export default function WhyUs() {
   const reasons = [
@@ -27,10 +28,28 @@ export default function WhyUs() {
   ];
 
   return (
-    <section id="why-us" className="py-24" style={{ backgroundColor: '#07272D' }}>
-      <div className="container mx-auto px-10">
+    <section
+      id="why-us"
+      className="py-24 relative bg-[#07272D] text-[#D9D9D6] overflow-hidden"
+    >
+      {/* Parallax Background */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${planeImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed', // Parallax effect
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-90"></div>
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Title */}
         <motion.h2
-          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#D9D9D6]"
+          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -38,22 +57,35 @@ export default function WhyUs() {
         >
           Why Choose OverTheSeas?
         </motion.h2>
-        <div className="grid md:grid-cols-2 gap-8">
+
+        {/* Card Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {reasons.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-[#F5F5F5] p-8 rounded-lg shadow-xl"
+              className="relative bg-[#0F3A42] p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl group"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.03 }}
             >
+              {/* Icon */}
               <div className="flex items-center mb-6">
-                <item.icon className="w-12 h-12 text-[#CBA052] mr-4" />
-                <h3 className="font-playfair-display-medium text-2xl text-[#07272D]">{item.title}</h3>
+                <item.icon
+                  className="w-12 h-12 text-[#CBA052] transition-transform transform group-hover:rotate-12 group-hover:scale-110"
+                />
+                <h3 className="ml-4 font-playfair-display-medium text-2xl">
+                  {item.title}
+                </h3>
               </div>
-              <p className="font-playfair-display-regular text-lg text-[#CBA052]">{item.description}</p>
+
+              {/* Description */}
+              <p className="font-playfair-display-regular text-lg text-[#A7B5B9]">
+                {item.description}
+              </p>
+
+              {/* Decorative Overlay (Hover Effect) */}
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[#CBA052] to-[#f4e0b8] opacity-0 group-hover:opacity-10 transition-opacity"></div>
             </motion.div>
           ))}
         </div>
