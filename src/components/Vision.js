@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart } from 'lucide-react';
-import backgroundImage from '../images/turbine.jpg'; // Replace with your image path
+import backgroundImage from '../images/turbine.jpg';
 
 const VisionMissionValues = () => {
   const sections = [
@@ -31,22 +31,26 @@ const VisionMissionValues = () => {
   ];
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: (i) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         delay: i * 0.2,
-        type: 'spring',
-        stiffness: 80,
+        ease: 'easeOut',
       },
     }),
     hover: {
-      scale: 1.05,
-      boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.2)',
-      transition: { type: 'spring', stiffness: 300 },
+      scale: 1.1,
+      boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.3)',
+      transition: { duration: 0.3, type: 'spring', stiffness: 150 },
     },
+  };
+
+  const listItemVariants = {
+    hidden: { opacity: 0, x: 10 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
   };
 
   return (
@@ -102,9 +106,9 @@ const VisionMissionValues = () => {
                   {section.content.map((item, idx) => (
                     <motion.li
                       key={idx}
-                      initial={{ opacity: 0, x: 10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.1 }}
+                      variants={listItemVariants}
+                      initial="hidden"
+                      animate="visible"
                     >
                       {item}
                     </motion.li>
@@ -119,7 +123,7 @@ const VisionMissionValues = () => {
               {/* Decorative Overlay (Hover Effect) */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-[#CBA052] to-[#f4e0b8] opacity-0 group-hover:opacity-10"
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.3 }}
               ></motion.div>
             </motion.div>
           ))}
@@ -130,8 +134,9 @@ const VisionMissionValues = () => {
         @media (max-width: 768px) {
           #parallax-section {
             background-attachment: scroll;
-            background-size: contain;
-            background-position: top;
+            background-size: cover;
+            background-position: center top;
+            aspect-ratio: 16/9;
           }
         }
       `}</style>
