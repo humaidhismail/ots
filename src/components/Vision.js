@@ -37,18 +37,18 @@ const VisionMissionValues = () => {
       className="relative py-12 md:py-24 bg-[#07272D] text-white"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: 'cover', // Ensures the image covers the entire section
+        backgroundPosition: 'center', // Centers the background image
         backgroundAttachment: 'fixed', // Parallax effect on desktop
       }}
     >
       {/* Overlay for text visibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-80"></div>
 
-      {/* Content inside the parallax section */}
+      {/* Content inside the section */}
       <div className="relative z-10 container mx-auto text-center px-6 md:px-10">
         {/* Heading */}
-        <h2 className="font-playfair-display text-3xl md:text-5xl text-white mb-8 md:mb-12">
+        <h2 className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff]">
           Our Vision, Mission & Values
         </h2>
 
@@ -81,6 +81,16 @@ const VisionMissionValues = () => {
           ))}
         </div>
       </div>
+
+      {/* Mobile handling with media query */}
+      <style jsx>{`
+        /* Mobile devices - no parallax effect */
+        @media (max-width: 768px) {
+          #parallax-section {
+            background-attachment: scroll; /* Remove parallax effect on mobile */
+          }
+        }
+      `}</style>
     </section>
   );
 };
