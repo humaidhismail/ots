@@ -32,14 +32,14 @@ export default function WhyUs() {
       id="why-us"
       className="py-24 relative bg-[#07272D] text-[#D9D9D6] overflow-hidden"
     >
-      {/* Parallax Background */}
+      {/* Background with Parallax Effect */}
       <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${planeImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed', // Parallax effect
+          backgroundAttachment: 'fixed', // Parallax effect on desktop
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-90"></div>
@@ -52,7 +52,7 @@ export default function WhyUs() {
           className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true }}
         >
           Why Choose OverTheSeas?
@@ -63,16 +63,20 @@ export default function WhyUs() {
           {reasons.map((item, index) => (
             <motion.div
               key={index}
-              className="relative bg-[#0F3A42] p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl group"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="relative bg-[#0F3A42] p-8 rounded-lg shadow-lg transform group"
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+                ease: 'easeOut',
+              }}
               viewport={{ once: true }}
             >
               {/* Icon */}
               <div className="flex items-center mb-6">
                 <item.icon
-                  className="w-12 h-12 text-[#CBA052] transition-transform transform group-hover:rotate-12 group-hover:scale-110"
+                  className="w-12 h-12 text-[#CBA052] transition-transform transform group-hover:scale-110 group-hover:rotate-6"
                 />
                 <h3 className="ml-4 font-playfair-display-medium text-2xl">
                   {item.title}
@@ -90,6 +94,17 @@ export default function WhyUs() {
           ))}
         </div>
       </div>
+
+      {/* Mobile Styles */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          #why-us div[style] {
+            background-attachment: scroll; /* Disable parallax for mobile */
+            background-size: contain; /* Ensure image doesn't stretch */
+            background-position: top; /* Align the image better */
+          }
+        }
+      `}</style>
     </section>
   );
 }
