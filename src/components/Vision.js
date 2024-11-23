@@ -34,26 +34,26 @@ const VisionMissionValues = () => {
   return (
     <section
       id="parallax-section"
-      className="relative py-24 bg-[#07272D] text-white"
+      className="relative py-12 md:py-24 bg-[#07272D] text-white"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: 'cover', // Ensures the image covers the entire section
+        backgroundPosition: 'center', // Centers the background image
         backgroundAttachment: 'fixed', // Parallax effect on desktop
       }}
     >
       {/* Overlay for text visibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-80"></div>
 
-      {/* Content inside the parallax section */}
+      {/* Content inside the section */}
       <div className="relative z-10 container mx-auto text-center px-6 md:px-10">
         {/* Heading */}
-        <h2 className="font-playfair-display text-4xl md:text-6xl text-white mb-12">
+        <h2 className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff]">
           Our Vision, Mission & Values
         </h2>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {sections.map((section, index) => (
             <div
               key={index}
@@ -63,22 +63,33 @@ const VisionMissionValues = () => {
               <div className="flex justify-center mb-4">{section.icon}</div>
 
               {/* Title */}
-              <h3 className="font-playfair-display-medium text-2xl text-white mb-4">{section.title}</h3>
+              <h3 className="font-playfair-display-medium text-xl md:text-2xl text-white mb-4">
+                {section.title}
+              </h3>
 
               {/* Content */}
               {Array.isArray(section.content) ? (
-                <ul className="font-playfair-display-regular text-lg text-[#A7B5B9] space-y-2">
+                <ul className="font-playfair-display-regular text-base md:text-lg text-[#A7B5B9] space-y-2">
                   {section.content.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
               ) : (
-                <p className="font-playfair-display-regular text-lg text-[#A7B5B9]">{section.content}</p>
+                <p className="font-playfair-display-regular text-base md:text-lg text-[#A7B5B9]">{section.content}</p>
               )}
             </div>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        /* Mobile devices - no parallax effect */
+        @media (max-width: 768px) {
+          #parallax-section {
+            background-attachment: scroll; /* Remove parallax effect on mobile */
+          }
+        }
+      `}</style>
     </section>
   );
 };
