@@ -82,7 +82,6 @@ const VisionMissionValues = () => {
         </div>
       </div>
 
-      {/* Mobile handling with media query */}
       <style jsx>{`
         /* Mobile devices - no parallax effect */
         @media (max-width: 768px) {
