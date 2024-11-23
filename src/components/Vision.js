@@ -1,26 +1,27 @@
 import React from 'react';
 import { Target, Eye, Heart } from 'lucide-react'; // Importing icons from lucide-react
 
-// Add this import for the background image path
-import backgroundImage from '../images/turbine.jpg'; // Replace with your image path
+// Importing images for desktop and mobile versions
+import backgroundImageDesktop from '../images/turbine.jpg'; // Desktop image
+import backgroundImageMobile from '../images/turbinemobile.png'; // Mobile image
 
 const VisionMissionValues = () => {
   const sections = [
     {
       title: 'Our Mission',
-      icon: <Target className="w-16 h-16 text-[#CBA052]" />, // Target icon
+      icon: <Target className="w-16 h-16 text-[#CBA052]" />,
       content:
         'To provide world-class aviation services that prioritize safety, innovation, and customer satisfaction, while supporting the growth and connectivity of the aviation industry in the Maldives and beyond.',
     },
     {
       title: 'Our Vision',
-      icon: <Eye className="w-16 h-16 text-[#CBA052]" />, // Eye icon
+      icon: <Eye className="w-16 h-16 text-[#CBA052]" />,
       content:
         "To be the leading aviation services provider in the Maldives, renowned for our expertise, reliability, and commitment to excellence, and to play a pivotal role in advancing the region's aviation sector.",
     },
     {
       title: 'Core Values',
-      icon: <Heart className="w-16 h-16 text-[#CBA052]" />, // Heart icon
+      icon: <Heart className="w-16 h-16 text-[#CBA052]" />,
       content: [
         'Safety First: Upholding the highest standards of safety in all aspects of our operations.',
         'Excellence: Delivering superior services with a commitment to quality and continuous improvement.',
@@ -36,10 +37,10 @@ const VisionMissionValues = () => {
       id="parallax-section"
       className="relative py-12 md:py-24 bg-[#07272D] text-white"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover', // Ensures the image covers the entire section
-        backgroundPosition: 'center', // Centers the background image
-        backgroundAttachment: 'fixed', // Parallax effect on desktop
+        backgroundImage: `url(${backgroundImageDesktop})`, // Default to desktop image
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
       }}
     >
       {/* Overlay for text visibility */}
@@ -83,10 +84,15 @@ const VisionMissionValues = () => {
       </div>
 
       <style jsx>{`
-        /* Mobile devices - no parallax effect */
+        #parallax-section {
+          background-image: url(${backgroundImageDesktop}); /* Default background image */
+        }
+
+        /* Mobile devices - apply a different image */
         @media (max-width: 768px) {
           #parallax-section {
-            background-attachment: scroll; /* Remove parallax effect on mobile */
+            background-image: url(${backgroundImageMobile});
+            background-attachment: scroll; /* Disable parallax on mobile for better performance */
           }
         }
       `}</style>
