@@ -1,9 +1,7 @@
 import React from 'react';
-import { Target, Eye, Heart } from 'lucide-react'; // Importing icons from lucide-react
-
-// Importing images for desktop and mobile versions
-import backgroundImageDesktop from '../images/turbine.jpg'; // Desktop image
-import backgroundImageMobile from '../images/turbinemobile.png'; // Mobile image
+import { motion } from 'framer-motion';
+import { Target, Eye, Heart } from 'lucide-react';
+import backgroundImage from '../images/turbine.jpg'; // Replace with your image path
 
 const VisionMissionValues = () => {
   const sections = [
@@ -32,12 +30,31 @@ const VisionMissionValues = () => {
     },
   ];
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: i * 0.2,
+        type: 'spring',
+        stiffness: 80,
+      },
+    }),
+    hover: {
+      scale: 1.05,
+      boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.2)',
+      transition: { type: 'spring', stiffness: 300 },
+    },
+  };
+
   return (
     <section
       id="parallax-section"
       className="relative py-12 md:py-24 bg-[#07272D] text-white"
       style={{
-        backgroundImage: `url(${backgroundImageDesktop})`, // Default to desktop image
+        backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -49,16 +66,27 @@ const VisionMissionValues = () => {
       {/* Content inside the section */}
       <div className="relative z-10 container mx-auto text-center px-6 md:px-10">
         {/* Heading */}
-        <h2 className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff]">
+        <motion.h2
+          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff]"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+        >
           Our Vision, Mission & Values
-        </h2>
+        </motion.h2>
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {sections.map((section, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-[#0F3A42] p-6 rounded-xl shadow-lg hover:scale-105 transform transition-all"
+              className="bg-[#0F3A42] p-6 rounded-xl shadow-lg group relative overflow-hidden"
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              variants={cardVariants}
+              viewport={{ once: true }}
             >
               {/* Icon */}
               <div className="flex justify-center mb-4">{section.icon}</div>
@@ -71,28 +99,39 @@ const VisionMissionValues = () => {
               {/* Content */}
               {Array.isArray(section.content) ? (
                 <ul className="font-playfair-display-regular text-base md:text-lg text-[#A7B5B9] space-y-2">
-                  {section.content.map((item, index) => (
-                    <li key={index}>{item}</li>
+                  {section.content.map((item, idx) => (
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0, x: 10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                    >
+                      {item}
+                    </motion.li>
                   ))}
                 </ul>
               ) : (
-                <p className="font-playfair-display-regular text-base md:text-lg text-[#A7B5B9]">{section.content}</p>
+                <p className="font-playfair-display-regular text-base md:text-lg text-[#A7B5B9]">
+                  {section.content}
+                </p>
               )}
-            </div>
+
+              {/* Decorative Overlay (Hover Effect) */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-[#CBA052] to-[#f4e0b8] opacity-0 group-hover:opacity-10"
+                transition={{ duration: 0.5 }}
+              ></motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       <style jsx>{`
-        #parallax-section {
-          background-image: url(${backgroundImageDesktop}); /* Default background image */
-        }
-
-        /* Mobile devices - apply a different image */
         @media (max-width: 768px) {
           #parallax-section {
-            background-image: url(${backgroundImageMobile});
-            background-attachment: scroll; /* Disable parallax on mobile for better performance */
+            background-attachment: scroll;
+            background-size: contain;
+            background-position: top;
           }
         }
       `}</style>
