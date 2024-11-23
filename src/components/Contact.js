@@ -58,8 +58,8 @@ export default function Contact() {
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <item.icon className="w-5 h-5 text-[#D9D9D6] mr-3 mt-1 group-hover:text-[#CBA052] transition-colors" />
-                  <p className="font-playfair-display-regular text-base text-[#D9D9D6] group-hover:text-[#CBA052] transition-colors">
+                  <item.icon className="w-5 h-5 text-[#D9D9D6] mr-3 mt-1 " />
+                  <p className="font-playfair-display-regular text-base text-[#D9D9D6]">
                     {item.text}
                   </p>
                 </motion.div>
