@@ -49,7 +49,7 @@ const VisionMissionValues = () => {
       <div className="relative z-10 container mx-auto text-center px-6 md:px-10">
         {/* Heading */}
         <h2 className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff]">
-          Our Vision, Mission & Values
+          Our Vision, Mission & Value
         </h2>
 
         {/* Cards Grid */}
