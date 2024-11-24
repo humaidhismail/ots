@@ -54,7 +54,7 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.6,
-            delay: index * 0.2,
+            delay: 0.2,
             ease: 'easeOut',
           }}
           viewport={{ once: true }}
