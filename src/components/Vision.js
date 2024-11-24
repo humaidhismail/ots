@@ -56,7 +56,7 @@ const VisionMissionValues = () => {
   return (
     <section
       id="parallax-section"
-      className="relative py-12 md:py-24text-white bg-background bg-cover"
+      className="relative py-12 md:py-24 text-white bg-background bg-cover bg-fixed"
       // style={{
       //   backgroundImage: `url(${backgroundImage})`,
       //   backgroundSize: 'cover',
@@ -92,7 +92,7 @@ const VisionMissionValues = () => {
           {sections.map((section, index) => (
             <motion.div
               key={index}
-              className="bg-[#0F3A42] p-6 rounded-xl shadow-lg group relative overflow-hidden"
+              className="bg-[#0F3A42] p-6 rounded-xl shadow-lg group relative overflow-hidden transition-all duration-200 ease-out"
               custom={index}
               initial="hidden"
               whileInView="visible"
