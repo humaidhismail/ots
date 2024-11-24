@@ -4,16 +4,24 @@ import images from '../images/hero.jpg'; // Replace with your image path
 
 export default function HeroPage() {
   const [offsetY, setOffsetY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleScroll = () => {
     setOffsetY(window.scrollY); // Track scroll position
   };
 
+  const checkIfMobile = () => {
+    setIsMobile(window.innerWidth < 768); // Adjust based on your mobile breakpoint
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', checkIfMobile);
+    checkIfMobile(); // Run on initial render
 
     return () => {
-      window.removeEventListener('scroll', handleScroll); // Cleanup on unmount
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkIfMobile);
     };
   }, []);
 
@@ -27,7 +35,7 @@ export default function HeroPage() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${images})`,
-          transform: `translateY(${offsetY * 0.3}px)`, // Parallax effect
+          transform: isMobile ? 'none' : `translateY(${offsetY * 0.3}px)`, // Parallax effect for desktop
           transition: 'transform 0.2s ease-out', // Smooth effect
         }}
       ></div>
@@ -60,7 +68,7 @@ export default function HeroPage() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Our Services
+            Our Services
           </motion.a>
           <motion.a
             href="#contact"
@@ -68,7 +76,7 @@ export default function HeroPage() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contact Us Now
+            Contact Us
           </motion.a>
         </div>
       </div>
