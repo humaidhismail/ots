@@ -52,7 +52,6 @@ export default function WhyUs() {
           className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center transition-all duration-200 ease-out"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          
           viewport={{ once: true }}
         >
           Why Choose OverTheSeas?
