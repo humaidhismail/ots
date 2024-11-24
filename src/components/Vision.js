@@ -56,7 +56,7 @@ const VisionMissionValues = () => {
   return (
     <section
       id="parallax-section"
-      className="relative py-12 md:py-24 text-white bg-background bg-cover bg-fixed"
+      className="relative py-12 md:py-24 text-white bg-vision bg-cover bg-center bg-fixed"
       // style={{
       //   backgroundImage: `url(${backgroundImage})`,
       //   backgroundSize: 'cover',

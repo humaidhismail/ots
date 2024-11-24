@@ -15,7 +15,8 @@ module.exports = {
         'playfair-display-regular': ['"Playfair Display Regular"', 'serif'],
       },
       backgroundImage: {
-        'background': "url('images/turbinemobile.png')",
+        'vision': "url('images/turbinemobile.png')",
+        'whyus' : "url('images/plane.jpg')"
       }
       
     },

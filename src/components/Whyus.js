@@ -30,17 +30,17 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="py-24 relative bg-[#07272D] text-[#D9D9D6] overflow-hidden"
+      className="py-24 relative bg-[#07272D] text-[#D9D9D6] overflow-hidden bg-whyus bg-cover bg-center bg-fixed"
     >
       {/* Background with Parallax Effect */}
       <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${planeImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed', // Parallax effect on desktop
-        }}
+        // className="absolute inset-0 z-0"
+        // style={{
+        //   backgroundImage: `url(${planeImage})`,
+        //   backgroundSize: 'cover',
+        //   backgroundPosition: 'center',
+        //   backgroundAttachment: 'fixed', // Parallax effect on desktop
+        // }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-90"></div>
       </div>
