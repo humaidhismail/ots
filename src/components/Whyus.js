@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Award, Sliders, Target } from 'lucide-react';
-import planeImage from '../images/plane.jpg'; 
+
 
 export default function WhyUs() {
   const reasons = [
@@ -49,7 +49,7 @@ export default function WhyUs() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Title */}
         <motion.h2
-          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center "
+          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center transition-all duration-200 ease-out"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
