@@ -30,7 +30,7 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="py-24 relative bg-[#07272D] text-[#D9D9D6] overflow-hidden bg-whyus bg-cover bg-center bg-fixed"
+      className="py-24 relative bg-[#07272D] text-[#D9D9D6]  bg-whyus bg-cover bg-center bg-scroll md:bg-fixed"
     >
       {/* Background with Parallax Effect */}
       <div
