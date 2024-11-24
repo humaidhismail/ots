@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Award, Sliders, Target } from 'lucide-react';
-import planeImage from '../images/plane.jpg'; // Ensure the correct path to the image
+import planeImage from '../images/plane.jpg'; 
 
 export default function WhyUs() {
   const reasons = [

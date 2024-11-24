@@ -82,7 +82,7 @@ const VisionMissionValues = () => {
           className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           Our Vision, Mission & Values
         </motion.h2>
@@ -132,6 +132,7 @@ const VisionMissionValues = () => {
               <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-[#CBA052] to-[#f4e0b8] opacity-0 group-hover:opacity-10"
                 transition={{ duration: 0.3 }}
+                transform={{ ease: easeOut}}
               ></motion.div>
             </motion.div>
           ))}

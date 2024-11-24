@@ -20,7 +20,7 @@ export default function HeroPage() {
   return (
     <section
       id="hero"
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-full flex items-center justify-center overflow-hidden"
     >
       {/* Parallax Background */}
       <div
