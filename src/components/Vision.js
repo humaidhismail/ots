@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { easeOut, motion } from 'framer-motion';
 import { Target, Eye, Heart } from 'lucide-react';
 import backgroundImage from '../images/turbinemobile.png';
 
@@ -56,7 +56,7 @@ const VisionMissionValues = () => {
   return (
     <section
       id="parallax-section"
-      className="relative py-12 md:py-24 text-white bg-vision bg-cover bg-center bg-scroll md:bg-fixed"
+      className="relative py-12 md:py-24 text-white  bg-vision bg-cover bg-center bg-scroll md:bg-fixed"
       // style={{
       //   backgroundImage: `url(${backgroundImage})`,
       //   backgroundSize: 'cover',
@@ -96,7 +96,7 @@ const VisionMissionValues = () => {
               custom={index}
               initial="hidden"
               whileInView="visible"
-              whileHover="hover"
+              whileHover={{ scale: 1.05, color: '#062c33', transition: {duration: 0.3}, easeOut}}
               variants={cardVariants}
               viewport={{ once: true }}
             >
