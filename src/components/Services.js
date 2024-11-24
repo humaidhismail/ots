@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { easeOut, motion } from 'framer-motion';
 import {
   Wrench,
   Plane,
@@ -80,6 +80,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.03 }}
+          transforrm={{ease: easeOut}}
           viewport={{ once: true }}
         >
           Our Comprehensive Services
@@ -96,7 +97,7 @@ export default function Services() {
               transition={{
                 duration: 0.03,
                 delay: index * 0.1,
-                ease: 'easeInOut',
+                ease: 'easeOut',
               }}
               viewport={{ once: true }}
               whileHover={{
