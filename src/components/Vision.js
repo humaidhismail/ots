@@ -78,11 +78,16 @@ const VisionMissionValues = () => {
           {sections.map((section, index) => (
             <motion.div
               key={index}
-              className="bg-[#0F3A42] p-6 rounded-xl shadow-lg group relative overflow-hidden transition-all duration-200 ease-out"
+              className="bg-[#0F3A42] p-6 rounded-xl shadow-lg group relative overflow-hidden"
               custom={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05, color: '#062c33'}}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+                ease: 'easeOut',
+              }}
               variants={cardVariants}
               viewport={{ once: true }}
             >
