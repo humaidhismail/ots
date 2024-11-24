@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart } from 'lucide-react';
-import backgroundImage from '../images/turbine.jpg';
+import backgroundImage from '../images/turbinemobile.png';
 
 const VisionMissionValues = () => {
   const sections = [
@@ -64,6 +64,14 @@ const VisionMissionValues = () => {
         backgroundAttachment: 'fixed',
       }}
     >
+       {/* <div
+        className="absolute h-full w-auto inset-0 bg-cover"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+         // Parallax effect
+          transition: 'transform 0.2s ease-out', // Smooth effect
+        }}
+      ></div> */}
       {/* Overlay for text visibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-80"></div>
 
