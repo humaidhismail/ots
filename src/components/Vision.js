@@ -96,7 +96,7 @@ const VisionMissionValues = () => {
               custom={index}
               initial="hidden"
               whileInView="visible"
-              whileHover={{ scale: 1.05, color: '#062c33', transition: {duration: 0.3}, easeOut}}
+              whileHover={{ scale: 1.05, color: '#062c33', transition: {duration: 0.3}, ease: 'easeOut'}}
               variants={cardVariants}
               viewport={{ once: true }}
             >
@@ -132,7 +132,7 @@ const VisionMissionValues = () => {
               <motion.div
                 className="absolute inset-0 bg-gradient-to-br from-[#CBA052] to-[#f4e0b8] opacity-0 group-hover:opacity-10"
                 transition={{ duration: 0.3 }}
-                transform={{ ease: easeOut}}
+                transform={{ ease: 'easeOut'}}
               ></motion.div>
             </motion.div>
           ))}
