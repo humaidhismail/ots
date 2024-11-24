@@ -57,21 +57,7 @@ const VisionMissionValues = () => {
     <section
       id="parallax-section"
       className="relative py-12 md:py-24 text-white  bg-vision bg-cover bg-center bg-scroll md:bg-fixed"
-      // style={{
-      //   backgroundImage: `url(${backgroundImage})`,
-      //   backgroundSize: 'cover',
-      //   backgroundPosition: 'center',
-      //   backgroundAttachment: 'fixed',
-      // }}
     >
-       {/* <div
-        className="absolute h-full w-auto inset-0 bg-cover"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-         // Parallax effect
-          transition: 'transform 0.2s ease-out', // Smooth effect
-        }}
-      ></div> */}
       {/* Overlay for text visibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-80"></div>
 
@@ -79,10 +65,10 @@ const VisionMissionValues = () => {
       <div className="relative z-10 container mx-auto text-center px-6 md:px-10">
         {/* Heading */}
         <motion.h2
-          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff]"
+          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff] transition-all duration-200 ease-out"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          
         >
           Our Vision, Mission & Values
         </motion.h2>
@@ -96,7 +82,7 @@ const VisionMissionValues = () => {
               custom={index}
               initial="hidden"
               whileInView="visible"
-              whileHover={{ scale: 1.05, color: '#062c33', transition: {duration: 0.3}, ease: 'easeOut'}}
+              whileHover={{ scale: 1.05, color: '#062c33'}}
               variants={cardVariants}
               viewport={{ once: true }}
             >

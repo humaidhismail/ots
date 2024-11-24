@@ -49,10 +49,10 @@ export default function WhyUs() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Title */}
         <motion.h2
-          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center"
+          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center transition-all duration-200 ease-out"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          
           viewport={{ once: true }}
         >
           Why Choose OverTheSeas?
