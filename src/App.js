@@ -11,7 +11,7 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#07272D] text-white scroll-smooth">
+    <div className="min-h-screen bg-[#07272D] text-white scroll-smooth overflow-x-hidden">
       <Navigations />
       <Hero />
       <About />
