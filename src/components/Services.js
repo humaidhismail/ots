@@ -91,7 +91,7 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg "
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
