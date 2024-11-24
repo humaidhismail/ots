@@ -80,8 +80,8 @@ const VisionMissionValues = () => {
               key={index}
               className="bg-[#0F3A42] p-6 rounded-xl shadow-lg group relative overflow-hidden transition-all duration-200 ease-out"
               custom={index}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05, color: '#062c33'}}
               variants={cardVariants}
               viewport={{ once: true }}
