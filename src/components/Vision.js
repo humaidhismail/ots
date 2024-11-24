@@ -56,13 +56,13 @@ const VisionMissionValues = () => {
   return (
     <section
       id="parallax-section"
-      className="relative py-12 md:py-24 bg-[#07272D] text-white"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
+      className="relative py-12 md:py-24 bg-[#07272D] text-white bg-background bg-cover"
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`,
+      //   backgroundSize: 'cover',
+      //   backgroundPosition: 'center',
+      //   backgroundAttachment: 'fixed',
+      // }}
     >
        {/* <div
         className="absolute h-full w-auto inset-0 bg-cover"
