@@ -1,131 +1,103 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { easeOut, motion } from 'framer-motion';
 import { Target, Eye, Heart } from 'lucide-react';
-import backgroundImage from '../images/turbinemobile.png';
 
 const VisionMissionValues = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const sections = [
     {
       title: 'Our Mission',
-      icon: <Target className="w-16 h-16 text-[#CBA052]" />,
+      icon: <Target className="w-8 h-8 sm:w-12 sm:h-12 text-[#CBA052]" />,
       content:
         'To provide world-class aviation services that prioritize safety, innovation, and customer satisfaction, while supporting the growth and connectivity of the aviation industry in the Maldives and beyond.',
     },
     {
       title: 'Our Vision',
-      icon: <Eye className="w-16 h-16 text-[#CBA052]" />,
+      icon: <Eye className="w-8 h-8 sm:w-12 sm:h-12 text-[#CBA052]" />,
       content:
         "To be the leading aviation services provider in the Maldives, renowned for our expertise, reliability, and commitment to excellence, and to play a pivotal role in advancing the region's aviation sector.",
     },
     {
       title: 'Core Values',
-      icon: <Heart className="w-16 h-16 text-[#CBA052]" />,
+      icon: <Heart className="w-8 h-8 sm:w-12 sm:h-12 text-[#CBA052]" />,
       content: [
-        'Safety First: Upholding the highest standards of safety in all aspects of our operations.',
-        'Excellence: Delivering superior services with a commitment to quality and continuous improvement.',
-        'Integrity: Conducting business with honesty, transparency, and respect for our clients and partners.',
-        'Innovation: Embracing new technologies and methodologies to provide cutting-edge solutions.',
-        'Customer Focus: Building strong relationships by understanding and exceeding client expectations.',
+        <p><strong className="font-bold text-white" >Safety First:</strong> Upholding the highest standards of safety in all aspects of our operations.</p>,
+        <p><strong className="font-bold text-white">Excellence:</strong> Delivering superior services with a commitment to quality and continuous improvement.</p>,
+        <p><strong className="font-bold text-white">Integrity:</strong> Conducting business with honesty, transparency, and respect for our clients and partners.</p>,
+        <p><strong className="font-bold text-white">Innovation:</strong> Embracing new technologies and methodologies to provide cutting-edge solutions.</p>,
+        <p><strong className="font-bold text-white">Customer Focus:</strong> Building strong relationships by understanding and exceeding client expectations.</p>,
       ],
     },
   ];
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay: i * 0.2,
-        ease: 'easeOut',
-      },
-    }),
-    hover: {
-      scale: 1.1,
-      boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.3)',
-      transition: { duration: 0.3, type: 'spring', stiffness: 150 },
-    },
-  };
-
-  const listItemVariants = {
-    hidden: { opacity: 0, x: 10 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+  const togglePanel = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
     <section
       id="parallax-section"
-      className="relative py-12 md:py-24 text-white  bg-vision bg-cover bg-center bg-scroll md:bg-fixed"
+      className="relative py-8 sm:py-12 md:py-24 text-white bg-vision bg-cover bg-center bg-scroll md:bg-fixed"
     >
-      {/* Overlay for text visibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-80"></div>
-
-      {/* Content inside the section */}
-      <div className="relative z-10 container mx-auto text-center px-6 md:px-10">
-        {/* Heading */}
+      <div className="relative z-10 container mx-auto text-center px-4 sm:px-6 md:px-10">
         <motion.h2
-          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#fff] transition-all duration-200 ease-out"
+          className="font-playfair-display-black text-3xl sm:text-4xl md:text-5xl mb-8 sm:mb-16 text-center text-[#fff] transition-all duration-200 ease-out"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          
         >
           Our Vision, Mission & Values
         </motion.h2>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {sections.map((section, index) => (
-            <motion.div
+        <div className="bg-[#0F3A42] p-6 sm:p-10 rounded-2xl">
+          {sections.map(({ title, icon, content }, index) => (
+            <div
               key={index}
-              className="bg-[#0F3A42] p-6 rounded-xl shadow-lg group relative overflow-hidden"
-              custom={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05, color: '#062c33'}}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.2,
-                ease: 'easeOut',
-              }}
-              variants={cardVariants}
-              viewport={{ once: true }}
+              className="border-b border-gray-600 last:border-none"
             >
-              {/* Icon */}
-              <div className="flex justify-center mb-4">{section.icon}</div>
-
-              {/* Title */}
-              <h3 className="font-playfair-display-medium text-xl md:text-2xl text-white mb-4">
-                {section.title}
-              </h3>
-
-              {/* Content */}
-              {Array.isArray(section.content) ? (
-                <ul className="font-playfair-display-regular text-base md:text-lg text-[#A7B5B9] space-y-2">
-                  {section.content.map((item, idx) => (
-                    <motion.li
-                      key={idx}
-                      variants={listItemVariants}
-                      initial="hidden"
-                      animate="visible"
-                    >
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="font-playfair-display-regular text-base md:text-lg text-[#A7B5B9]">
-                  {section.content}
-                </p>
-              )}
-
-              {/* Decorative Overlay (Hover Effect) */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-[#CBA052] to-[#f4e0b8] opacity-0 group-hover:opacity-10"
-                transition={{ duration: 0.3 }}
-                transform={{ ease: 'easeOut'}}
-              ></motion.div>
-            </motion.div>
+                className="flex items-center justify-between p-3 sm:p-4 cursor-pointer hover:bg-[#124d55] rounded-lg transition"
+                onClick={() => togglePanel(index)}
+              >
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  {icon}
+                  <h3 className="font-playfair-display-black text-base sm:text-lg text-[#CBA052]">
+                    {title}
+                  </h3>
+                </div>
+                <motion.span
+                  animate={{
+                    rotate: activeIndex === index ? 180 : 0,
+                  }}
+                  transition={{ duration: 0.3, ease: easeOut }}
+                >
+                  ▼
+                </motion.span>
+              </motion.div>
+
+              <motion.div
+                className="overflow-hidden"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{
+                  height: activeIndex === index ? 'auto' : 0,
+                  opacity: activeIndex === index ? 1 : 0,
+                }}
+                transition={{ duration: 0.5, ease: easeOut }}
+              >
+                <div className="p-3 sm:p-4 text-gray-300 font-playfair-display-black">
+                  {Array.isArray(content) ? (
+                    <div className="space-y-2">
+                      {content.map((item, i) => (
+                        <div key={i}>{item}</div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p>{content}</p>
+                  )}
+                </div>
+              </motion.div>
+            </div>
           ))}
         </div>
       </div>
