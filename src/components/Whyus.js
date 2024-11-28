@@ -22,7 +22,7 @@ export default function WhyUs() {
     },
     {
       icon: Target,
-      title: 'Commitment to Excellence',
+      title: 'Excellence-driven',
       description: 'Unwavering dedication to operational efficiency, safety, and customer satisfaction.',
     },
   ];
@@ -78,19 +78,23 @@ export default function WhyUs() {
               viewport={{ once: true }}
             >
               {/* Icon */}
-              <div className="flex items-center mb-6">
-                <item.icon
-                  className="w-12 h-12 text-[#CBA052] transition-transform transform group-hover:scale-110 group-hover:rotate-6"
-                />
-                <h3 className="ml-4 font-playfair-display-medium text-2xl">
-                  {item.title}
-                </h3>
+              <div className='flex flex-col justify-between space-y-5'>
+                <div className="flex items-center">
+                  <item.icon
+                    className="w-12 h-12 text-[#CBA052] transition-transform transform group-hover:scale-110 group-hover:rotate-6"
+                  />
+                  <h3 className="ml-4 font-playfair-display-medium text-2xl">
+                    {item.title}
+                  </h3>
+                  </div>
+                 
+                    <p className="font-playfair-display-regular text-lg text-[#A7B5B9]">
+                    {item.description}
+                    </p>
               </div>
 
               {/* Description */}
-              <p className="font-playfair-display-regular text-lg text-[#A7B5B9]">
-                {item.description}
-              </p>
+             
 
               {/* Decorative Overlay (Hover Effect) */}
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[#CBA052] to-[#f4e0b8] opacity-0 group-hover:opacity-10 transition-opacity"></div>
