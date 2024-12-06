@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail } from 'lucide-react';
-import image from '../images/Overtheseas-logo-dark.png';
+import image from '../images/Overtheseas-logo-light.png';
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -41,14 +41,16 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-playfair-display-medium text-2xl mb-4 text-[#CBA052]">Contact Information</h3>
+            <h3 className="font-playfair-display-medium text-2xl mb-4 text-[#CBA052]">
+              Contact Information
+            </h3>
+            <img
+              src={image}
+              alt="OVERTHESEAS Logo"
+              className="w-auto h-8 object-contain cursor-pointer mb-4"
+              onClick={scrollToTop}
+            />
             <div className="flex flex-col space-y-4">
-              <img
-                src={image}
-                alt="OVERTHESEAS Logo"
-                className="w-auto h-8 object-contain cursor-pointer"
-                onClick={scrollToTop}
-              />
               {contactInfo.map((item, index) => (
                 <motion.div
                   key={index}
@@ -58,7 +60,7 @@ export default function Contact() {
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <item.icon className="w-5 h-5 text-[#D9D9D6] mr-3 mt-1 " />
+                  <item.icon className="w-5 h-5 text-[#D9D9D6] mr-3 mt-1" />
                   <p className="font-playfair-display-regular text-base text-[#D9D9D6]">
                     {item.text}
                   </p>
@@ -88,7 +90,6 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
-      {/* Adjusted Copyright Section */}
       <div className="mt-8 bg-[#07272D] text-center text-[#D9D9D6]">
         <p className="text-sm">&copy; {new Date().getFullYear()} OverTheSeas. All rights reserved.</p>
       </div>

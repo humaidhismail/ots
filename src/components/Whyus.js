@@ -49,7 +49,7 @@ export default function WhyUs() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Title */}
         <motion.h2
-          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center transition-all duration-200 ease-out"
+          className="font-playfair-display-black text-4xl sm:text-5xl md:text-6xl mb-8 sm:mb-16 text-center text-[#fff] transition-all duration-200 ease-out"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
@@ -83,7 +83,7 @@ export default function WhyUs() {
                   <item.icon
                     className="w-12 h-12 text-[#CBA052] transition-transform transform group-hover:scale-110 group-hover:rotate-6"
                   />
-                  <h3 className="ml-4 font-playfair-display-medium text-2xl">
+                  <h3 className="ml-4 font-playfair-display-medium font-bold text-2xl">
                     {item.title}
                   </h3>
                   </div>
