@@ -7,7 +7,7 @@ export default function Hero() {
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-10">
         <motion.h2 
-          className="font-playfair-display-black text-5xl md:text-6xl mb-16 text-center text-black pt-4"
+          className="font-playfair-display-black text-5xl font-semibold md:text-6xl mb-16 text-center text-black pt-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

@@ -43,7 +43,7 @@ const VisionMissionValues = () => {
      <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-50"></div>
       <div className="relative z-10 container mx-auto text-center px-4 sm:px-6 md:px-10">
         <motion.h2
-          className="font-playfair-display-black text-4xl sm:text-5xl md:text-6xl mb-8 sm:mb-16 text-center text-[#fff] transition-all duration-200 ease-out"
+          className="font-playfair-display-black font-semibold text-4xl sm:text-5xl md:text-6xl mb-8 sm:mb-16 text-center text-[#fff] transition-all duration-200 ease-out"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
