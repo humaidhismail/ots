@@ -25,7 +25,7 @@ export default function Team() {
       <div className="container mx-auto px-6 sm:px-10">
         {/* Section Title */}
         <motion.h2
-          className="font-playfair-display-black text-4xl md:text-5xl mb-16 text-center text-[#07272D]"
+          className="font-playfair-display-black text-4xl sm:text-5xl md:text-6xl mb-8 sm:mb-16 text-center text-black"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
@@ -50,11 +50,11 @@ export default function Team() {
               }}
             >
               {/* Team Member Name */}
-              <h3 className="font-playfair-display-medium text-2xl text-[#07272D] mb-2">
+              <h3 className="font-playfair-display-medium text-3xl font-bold text-[#07272D] mb-2">
                 {member.name}
               </h3>
               {/* Team Member Position */}
-              <h4 className="font-playfair-display-regular text-xl text-[#CBA052] mb-4">
+              <h4 className="font-playfair-display-regular text-2xl text-[#CBA052] mb-4">
                 {member.position}
               </h4>
               {/* Team Member Bio */}

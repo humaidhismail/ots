@@ -44,7 +44,7 @@ export default function HeroPage() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-[#07272D] opacity-80"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-3xl">
+      <div className=" relative z-10 text-center text-[#CBA052] px-6 max-w-3xl">
         <motion.h1
           className="font-playfair-display-black text-4xl md:text-6xl leading-tight mb-6"
           initial={{ opacity: 0, y: -50 }}
@@ -54,7 +54,7 @@ export default function HeroPage() {
           Elevating Aviation Services
         </motion.h1>
         <motion.p
-          className="font-playfair-display-medium text-lg md:text-xl mb-8"
+          className="text-white font-playfair-display-medium text-sm md:text-base mb-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}

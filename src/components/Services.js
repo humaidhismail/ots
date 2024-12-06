@@ -76,7 +76,7 @@ export default function Services() {
       <div className="container mx-auto px-10">
         {/* Section Title */}
         <motion.h2
-          className="font-playfair-display-black text-4xl md:text-5xl text-[#07272D] mb-16 text-center"
+          className="font-playfair-display-black text-4xl sm:text-5xl md:text-6xl mb-8 sm:mb-16 text-center text-black"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.03 }}
@@ -108,7 +108,7 @@ export default function Services() {
               {/* Service Icon */}
               <service.icon className="w-12 h-12 text-[#CBA052] mb-6" />
               {/* Service Title */}
-              <h3 className="font-playfair-display-medium text-2xl text-[#07272D] mb-4">
+              <h3 className="font-playfair-display-medium font-bold text-2xl text-[#07272D] mb-4">
                 {service.title}
               </h3>
               {/* Service Description */}
