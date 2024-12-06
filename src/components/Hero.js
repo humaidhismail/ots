@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import images from '../images/hero.jpg'; // Replace with your image path
+import images from '../images/hero.jpg'; 
 
 export default function HeroPage() {
   const [offsetY, setOffsetY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
   const handleScroll = () => {
-    setOffsetY(window.scrollY); // Track scroll position
+    setOffsetY(window.scrollY); 
   };
 
   const checkIfMobile = () => {
-    setIsMobile(window.innerWidth < 768); // Adjust based on your mobile breakpoint
+    setIsMobile(window.innerWidth < 768); 
   };
 
   useEffect(() => {
