@@ -116,7 +116,7 @@ export default function Services() {
                 {service.description.map((item, itemIndex) => (
                   <div
                     key={itemIndex}
-                    className="font-playfair-display-regular text-[#07272D]"
+                    className="font-playfair-display-regular text-lg text-[#07272D]"
                   >
                     {item}
                     {itemIndex < service.description.length - 1 && (
