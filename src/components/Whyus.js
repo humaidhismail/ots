@@ -42,7 +42,7 @@ export default function WhyUs() {
         //   backgroundAttachment: 'fixed', // Parallax effect on desktop
         // }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07272D] via-[#0F3A42] to-transparent opacity-50"></div>
       </div>
 
       {/* Content */}
