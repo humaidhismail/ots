@@ -62,7 +62,7 @@ const VisionMissionValues = () => {
               >
                 <div className="flex items-center space-x-3 sm:space-x-4">
                   {icon}
-                  <h3 className="font-playfair-display-black font-bold text-base sm:text-lg text-white">
+                  <h3 className="font-playfair-display-black font-bold text-2xl sm:text-2xl text-white">
                     {title}
                   </h3>
                 </div>
@@ -85,7 +85,7 @@ const VisionMissionValues = () => {
                 }}
                 transition={{ duration: 0.5, ease: easeOut }}
               >
-                <div className="p-3 sm:p-4 text-white font-playfair-display-black">
+                <div className="p-3 sm:p-4 text-white text-lg font-playfair-display-black">
                   {Array.isArray(content) ? (
                     <div className="space-y-2">
                       {content.map((item, i) => (

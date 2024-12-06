@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Correct import for React 18+
-import Navigations from './components/Navigations'; // Ensure the file is named Navigation.js
+import ReactDOM from 'react-dom/client'; 
+import Navigations from './components/Navigations'; 
 import Hero from './components/Hero';
 import About from './components/About';
 import Vision from './components/Vision';
 import Services from './components/Services';
-import WhyUs from './components/Whyus'; // Fixed capitalization of 'WhyUs'
+import WhyUs from './components/Whyus'; 
 import Team from './components/Team';
 import Contact from './components/Contact';
 

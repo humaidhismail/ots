@@ -17,7 +17,7 @@ export default function HeroPage() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', checkIfMobile);
-    checkIfMobile(); // Run on initial render
+    checkIfMobile(); 
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -35,8 +35,8 @@ export default function HeroPage() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${images})`,
-          transform: isMobile ? 'none' : `translateY(${offsetY * 0.3}px)`, // Parallax effect for desktop
-          transition: 'transform 0.2s ease-out', // Smooth effect
+          backgroundAttachment: 'fixed',
+          backgroundPosition: `center calc(50% + ${offsetY * 0.3}px)`,
         }}
       ></div>
 
