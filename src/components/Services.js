@@ -76,7 +76,7 @@ export default function Services() {
       <div className="container mx-auto px-10">
         {/* Section Title */}
         <motion.h2
-          className="font-playfair-display-black text-4xl sm:text-5xl md:text-6xl mb-8 sm:mb-16 text-center text-black"
+          className="font-playfair-display-black text-4xl font-semibold sm:text-5xl md:text-6xl mb-8 sm:mb-16 text-center text-black"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.03 }}
